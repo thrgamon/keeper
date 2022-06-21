@@ -9,11 +9,13 @@ read app_name
 
 if [ -z "$app_name" ]
 then
-  app_name=current_dir
+  app_name=${current_dir}
 fi
 
 echo "Setting \$APP_NAME to ${app_name}"
-echo "\$APP_NAME=${app_name}" >> ../.env
+echo "APP_NAME=${app_name}" >> .env
 
 echo "Setting \$DB_NAME to ${app_name}_db"
-echo "\$DB_NAME=${app_name}_db" >> ../.env
+echo "DB_NAME=${app_name}_db" >> .env
+
+direnv allow
